@@ -17,3 +17,8 @@ mongoose.connect(`mongodb+srv://etrechyp:0VlPD0JUfeAPGX7T@data.6xc9h56.mongodb.n
 
 app.use("/api/meals", meals);
 app.use("/api/orders", orders);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

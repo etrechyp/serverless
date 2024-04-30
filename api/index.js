@@ -5,15 +5,18 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const meals = require("./routes/meals");
-const orders = require("./routes/orders")
+const orders = require("./routes/orders");
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(`mongodb+srv://etrechyp:0VlPD0JUfeAPGX7T@data.6xc9h56.mongodb.net/serverless`);
 
 app.use("/api/meals", meals);
-app.use("/api/orders", orders)
+app.use("/api/orders", orders);
 
-module.exports = app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

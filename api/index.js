@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 
 const meals = require("./routes/meals");
 const orders = require("./routes/orders");
+const auth = require("./routes/auth");
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -17,6 +19,7 @@ mongoose.connect(`mongodb+srv://etrechyp:0VlPD0JUfeAPGX7T@data.6xc9h56.mongodb.n
 
 app.use("/api/meals", meals);
 app.use("/api/orders", orders);
+app.use("/api/auth", auth);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

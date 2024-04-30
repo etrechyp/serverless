@@ -9,7 +9,9 @@ const orders = require("./routes/orders");
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors({
+	origin: '*'
+}));
 
 mongoose.connect(`mongodb+srv://etrechyp:0VlPD0JUfeAPGX7T@data.6xc9h56.mongodb.net/serverless`);
 

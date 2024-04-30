@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Orders = mongoose.Model(
+const Orders = mongoose.model(
     "Order",
     new Schema({
         meal_id: {

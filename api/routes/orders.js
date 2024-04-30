@@ -19,11 +19,11 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-    Orders.findOneAndUpdate(req.params.id, req.body).then(() => res.sendStatus(204))
+    Orders.findByIdAndUpdate(req.params.id, req.body).then(() => res.sendStatus(204))
 });
 
 router.delete("/:id", (req, res) => {
-    Orders.findOneAndDelete(req.params.id).exec().then(() => res.sendStatus(204))
+    Orders.findByIdAndDelete(req.params.id).exec().then(() => res.sendStatus(204))
 });
 
 module.exports = router;

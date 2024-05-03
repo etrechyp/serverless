@@ -29,7 +29,7 @@ router.post("/register", (req, res) => {
                         password: encryptedPassword,
                         salt: newSalt,
                     }).then(() => {
-                        res.send("user ccreated successfully");
+                        res.send("user created successfully");
                     });
                 });
         });
